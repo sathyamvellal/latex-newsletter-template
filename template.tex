@@ -23,6 +23,7 @@
 \usepackage{relsize}
 \usepackage{setspace}
 \usepackage{lipsum}
+\usepackage{mwe}
 \usepackage{booktabs}
 \usepackage{indentfirst}
 \usepackage{titling}
@@ -106,6 +107,14 @@
 \let\Contentsline\contentsline
 \renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
 \renewcommand{\cftsecaftersnum}{.}
+\newcommand{\image}[1]{
+\begin{figure}[H]
+\centering
+\vspace*{-0.3em}
+\includegraphics[width=0.9\columnwidth]{#1}
+\vspace*{-0.7em}
+\end{figure}
+}
 
 \renewcommand\refname{\textbf{\large References}}
 
@@ -140,11 +149,11 @@
 \hfill\\
 \textbf{Quis Dapibus Ipsum!}
 
-Phasellus malesuada nisl at sapien vehicula at porttitor mi egestas ornare quis lobortis eros volutpat nunc viverra viverra ligula, sit amet posuere lectus aliquam quis. Vel at dolor \href{http://www.example.com}{elementum sapien}, mollis sit amet.
+\lipsum[1][3-5] Quis \href{http://www.example.com}{elementum sapien}, mollis sit amet.
 
 \textbf{Ornare Justo Ultricies}
 
-Aliquam tristique sapien ut neque condimentum fermentum. In ultricies dictum massa, sit amet volutpat felis rutrum sit amet. Nulla vulputate leo et purus \href{http://www.example.com}{Ornare Justo Ultricies}. Consectetur iaculis eros \href{http://www.example.com}{Ornare Justo} non et.
+\lipsum[2][2-4]
 
 \end{mdframed}
 \end{minipage}\hfill%
@@ -159,7 +168,9 @@ Aliquam tristique sapien ut neque condimentum fermentum. In ultricies dictum mas
 
 \hypertarget{heading1}{\heading{Heading1}}
 
-\lipsum[1][1-4]
+\lipsum[1][1]
+
+\image{example-image}
 
 \lipsum[2][1-4]
 
