@@ -1,0 +1,198 @@
+\documentclass[10pt]{article}
+
+% ---------------------------------------------------------
+% PACKAGES
+% ---------------------------------------------------------
+
+\usepackage[top=0in,bottom=1in,left=.5in,right=.5in]{geometry}
+\usepackage[affil-it]{authblk}
+\usepackage{abstract}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, linkcolor=altncolor, anchorcolor=altncolor, citecolor=altncolor, filecolor=altncolor, menucolor=altncolor, urlcolor=altncolor]{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[xetex]{graphicx}
+\usepackage[pdf]{graphviz}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{relsize}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[titles]{tocloft}
+\usepackage{charter}
+\usepackage{courier}
+
+% ---------------------------------------------------------
+% CONFIGURATION
+% ---------------------------------------------------------
+
+\setlist{noitemsep,nolistsep}
+
+\mdfdefinestyle{sidebar}{
+    linecolor=black, % Outer line color
+    outerlinewidth=0.5pt, % Outer line width
+    roundcorner=0pt, % Amount of corner rounding
+    innertopmargin=10pt, % Top margin
+    innerbottommargin=10pt, % Bottom margin
+    innerrightmargin=10pt, % Right margin
+    innerleftmargin=10pt, % Left margin
+    backgroundcolor=white, % Box background color
+    frametitlebackgroundcolor=white, % Title background color
+    frametitlerule=false, % Title rule - true or false
+    frametitlerulecolor=white, % Title rule color
+    frametitlerulewidth=0.5pt, % Title rule width
+    frametitlefont=\Large, % Title heading font specification
+    font=\small
+}
+
+\mdfdefinestyle{intextbox}{
+    linecolor=black, % Outer line color
+    outerlinewidth=0.5pt, % Outer line width
+    roundcorner=10pt, % Amount of corner rounding
+    innertopmargin=7pt, % Top margin
+    innerbottommargin=7pt, % Bottom margin
+    innerrightmargin=7pt, % Right margin
+    innerleftmargin=7pt, % Left margin
+    backgroundcolor=white, % Box background color
+    frametitlebackgroundcolor=white, % Title background color
+    frametitlerule=false, % Title rule - true or false
+    frametitlerulecolor=white, % Title rule color
+    frametitlerulewidth=0.5pt, % Title rule width
+    frametitlefont=\Large % Title heading font specification
+}
+
+\newcommand{\heading}[1]{\section{#1}}%
+
+\newcommand{\BackToContents}{\hyperlink{contents}{{\small Back to Contents}}} % Define a command for linking back to the contents of the newsletter
+
+\captionsetup[table]{labelfont={bf,sf},labelsep=period,justification=justified} % Specify the table caption style
+\captionsetup[figure]{labelfont={sf,bf},labelsep=period,justification=justified, font=small} % Specify the figure caption style
+\setlength{\abovecaptionskip}{10pt} % Whitespace above captions
+
+\fancypagestyle{fancyfirst}
+{
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyhf{}
+    \chead{}
+    \lhead{}
+    \rhead{}
+    \lfoot{}
+    \rfoot{}
+}
+
+\makeatletter
+\usepackage{parskip}
+\setlength{\parskip}{6pt}
+\newcommand{\@minipagerestore}{\setlength{\parskip}{6pt}}
+\makeatother
+
+\definecolor{altncolor}{rgb}{.8,0,0}
+
+\setlength{\cftbeforesecskip}{0pt}
+\renewcommand{\contentsname}{\large In This Issue\ldots}
+\let\Contentsline\contentsline
+\renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
+\renewcommand{\cftsecaftersnum}{.}
+
+\renewcommand\refname{\textbf{\large References}}
+
+\titleformat{\section}{\bfseries\large}{}{0pt}{}
+
+\preauthor{\begin{flushleft}by }
+\postauthor{\hfill\today\end{flushleft}}
+
+\title{\textbf{\huge ProjectWeekly}\hfill{\normalsize Volume 1, Issue 1}}
+\author{\textbf{Author Name}}
+\date{}
+
+% ---------------------------------------------------------
+% DOCUMENT
+% ---------------------------------------------------------
+
+\begin{document}
+\vspace{-2em}
+\maketitle
+\thispagestyle{fancyfirst}
+\vspace{-3em}
+
+% ---------------------------------------------------------
+% SIDEBAR
+% ---------------------------------------------------------
+
+\begin{minipage}[t]{.30\linewidth}
+\begin{mdframed}[style=sidebar,frametitle={}]
+\tableofcontents
+\hfill
+\centerline {\rule{.75\linewidth}{.25pt}}
+\hfill\\
+\textbf{Quis Dapibus Ipsum!}
+
+Phasellus malesuada nisl at sapien vehicula at porttitor mi egestas ornare quis lobortis eros volutpat nunc viverra viverra ligula, sit amet posuere lectus aliquam quis. Vel at dolor \href{http://www.example.com}{elementum sapien}, mollis sit amet.
+
+\textbf{Ornare Justo Ultricies}
+
+Aliquam tristique sapien ut neque condimentum fermentum. In ultricies dictum massa, sit amet volutpat felis rutrum sit amet. Nulla vulputate leo et purus \href{http://www.example.com}{Ornare Justo Ultricies}. Consectetur iaculis eros \href{http://www.example.com}{Ornare Justo} non et.
+
+\end{mdframed}
+\end{minipage}\hfill%
+%
+% ---------------------------------------------------------
+% BODY
+% ---------------------------------------------------------
+%
+\begin{minipage}[t]{.67\linewidth}
+\hfill
+\begin{multicols}{2}
+
+\hypertarget{heading1}{\heading{Heading1}}
+
+\lipsum[1][1-4]
+
+\lipsum[2][1-4]
+
+% \BackToContents
+% ---------------------------------------------------------
+
+\hypertarget{heading2}{\heading{Heading2}}
+
+\lipsum[3][1-4]
+
+\lipsum[4][1-4]
+
+\lipsum[5][1-4]
+
+% \BackToContents
+% ---------------------------------------------------------
+
+\hypertarget{heading3}{\heading{Heading3}}
+
+\lipsum[6][1-4]
+
+\lipsum[7][1-4]
+
+% \BackToContents
+% ---------------------------------------------------------
+
+\end{multicols}\hfill
+\end{minipage}%
+
+\nocite{*}
+\begin{thebibliography}{}
+\bibitem[ABC]{abc}
+Hello World, et. all, 2005
+\end{thebibliography}
+
+\end{document}
